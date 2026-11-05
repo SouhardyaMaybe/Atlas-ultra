@@ -31,9 +31,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     
-    kotlinOptions {
+    // Use kotlin extension for Kotlin 2.0+ with AGP 9.5.0
+    kotlin {
         jvmTarget = "17"
-        freeCompilerArgs += listOf("-Xjsr305=strict")
+        freeCompilerArgs.add("-Xjsr305=strict")
     }
     
     buildFeatures {
