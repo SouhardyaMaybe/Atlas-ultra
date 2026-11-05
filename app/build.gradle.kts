@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("org.jetbrains.kotlin.android") version "2.4.21"
 }
 
 android {
@@ -30,9 +31,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     
-    kotlin {
+    kotlinOptions {
         jvmTarget = "17"
-        freeCompilerArgs.add("-Xjsr305=strict")
+        freeCompilerArgs += listOf("-Xjsr305=strict")
     }
     
     buildFeatures {
