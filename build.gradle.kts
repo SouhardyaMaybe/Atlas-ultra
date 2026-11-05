@@ -6,13 +6,6 @@ plugins {
 allprojects {
     group = "com.atlas.ultra"
     version = "0.1.0-SNAPSHOT"
-    
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://maven.fabricmc.net/")
-        maven("https://libraries.minecraft.net/")
-    }
 }
 
 tasks.register("clean", Delete::class) {
