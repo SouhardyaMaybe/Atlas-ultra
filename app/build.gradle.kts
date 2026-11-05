@@ -30,9 +30,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs += listOf("-Xjsr305=strict")
+    compilerOptions {
+        jvmTarget.set(JavaVersion.VERSION_17.toString())
+        freeCompilerArgs.add("-Xjsr305=strict")
     }
     
     buildFeatures {
@@ -43,7 +43,7 @@ android {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
     
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1,LICENSE,NOTICE}"
         }
@@ -72,10 +72,4 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     androidTestImplementation("org.robolectric:robolectric:4.15")
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 }
