@@ -32,11 +32,8 @@ jobs:
         with:
           gradle-version: ${{ env.GRADLE_VERSION }}
       
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-      
       - name: Run core tests
-        run: ./gradlew :core:test --info
+        run: gradle :core:test --info
       
       - name: Upload test reports
         if: always()
@@ -75,11 +72,8 @@ jobs:
         with:
           gradle-version: ${{ env.GRADLE_VERSION }}
       
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-      
       - name: Run app lint
-        run: ./gradlew :app:lint --info
+        run: gradle :app:lint --info
       
       - name: Upload lint reports
         if: always()
@@ -110,14 +104,11 @@ jobs:
         with:
           gradle-version: ${{ env.GRADLE_VERSION }}
       
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-      
-      - name: Run diagnostic (gradlew help)
-        run: ./gradlew help
+      - name: Run diagnostic (gradle help)
+        run: gradle help
       
       - name: Verify project structure
-        run: ./gradlew projects
+        run: gradle projects
 
   # Live smoke test - only runs on manual trigger or schedule
   live-smoke-test:
@@ -144,11 +135,8 @@ jobs:
         with:
           gradle-version: ${{ env.GRADLE_VERSION }}
       
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-      
       - name: Run live smoke test
-        run: ./gradlew :core:test --tests "com.atlas.ultra.core.LiveSmokeTest" --info
+        run: gradle :core:test --tests "com.atlas.ultra.core.LiveSmokeTest" --info
       
       - name: Upload test reports
         if: always()
