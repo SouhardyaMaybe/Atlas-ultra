@@ -1,6 +1,8 @@
 package com.atlas.ultra.core.resolver
 
 import com.atlas.ultra.core.model.DownloadEntry
+import com.atlas.ultra.core.model.DownloadType
+import com.atlas.ultra.core.model.Library
 import com.atlas.ultra.core.model.MavenCoordinate
 import com.atlas.ultra.core.model.Platform
 import com.atlas.ultra.core.model.VersionJson
@@ -85,6 +87,8 @@ data class LibraryEntry(
     val download: DownloadEntry,
     val source: LibrarySource,
     val platform: Platform,
+    val type: DownloadType = DownloadType.LIBRARY,
+    val library: Library? = null,
 )
 
 enum class LibrarySource {

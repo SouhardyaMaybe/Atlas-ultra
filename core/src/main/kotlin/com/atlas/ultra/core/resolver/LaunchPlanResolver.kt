@@ -38,7 +38,7 @@ class LaunchPlanResolver(
         
         // 4. Determine asset layout
         val assetIndex = fetchAssetIndex(versionJson)
-        val assetLayout = assetIndex.layout
+        val assetLayout = assetIndex.getLayout()
         
         // 5. Collect all libraries (vanilla + fabric)
         val allLibraries = collectLibraries(versionJson, fabricProfile, targetPlatform)
@@ -47,7 +47,7 @@ class LaunchPlanResolver(
         val deduplicated = LibraryDeduplicator.deduplicate(allLibraries)
         
         // 7. Check natives
-        NativeLibraryChecker.checkNatives(deduplicated.map { it.library }, targetPlatform)
+        NativeLibraryChecker.checkNatives(deduplicated.mapNotNull { it.library }, targetPlatform)
         
         // 8. Build download list
         val downloads = buildDownloads(versionJson, assetIndex, fabricProfile, deduplicated, targetPlatform)
