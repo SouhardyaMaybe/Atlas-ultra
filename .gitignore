@@ -1,0 +1,45 @@
+# Gradle
+.gradle/
+build/
+*/build/
+*/.gradle/
+
+# Local configuration
+local.properties
+*.iml
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Test reports
+*.html
+*.xml
+
+# Logs
+*.log
+
+# Cache
+.caches/
+*.bin
+
+# Android Studio
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.jar
+
+# Build outputs
+out/
