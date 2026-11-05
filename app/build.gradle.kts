@@ -30,9 +30,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     
-    compilerOptions {
-        jvmTarget.set(JavaVersion.VERSION_17.toString())
-        freeCompilerArgs.add("-Xjsr305=strict")
+    kotlinOptions {
+        jvmTarget = "17"
+        freeCompilerArgs += listOf("-Xjsr305=strict")
     }
     
     buildFeatures {
