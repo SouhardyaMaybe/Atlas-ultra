@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.4.21"
+    id("org.jetbrains.kotlin.android") version "2.0.20"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.20"
 }
 
 android {
@@ -31,10 +32,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     
-    // Use kotlin extension for Kotlin 2.0+ with AGP 9.5.0
-    kotlin {
+    kotlinOptions {
         jvmTarget = "17"
-        freeCompilerArgs.add("-Xjsr305=strict")
+        freeCompilerArgs += listOf("-Xjsr305=strict")
     }
     
     buildFeatures {
