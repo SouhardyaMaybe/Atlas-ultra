@@ -1,6 +1,5 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android") version "2.4.21"
 }
 
 android {
@@ -31,10 +30,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs += listOf("-Xjsr305=strict")
-    }
+    // AGP 9.5.0 uses built-in Kotlin support
+    // Default Kotlin compiler options should work for Java 17
     
     buildFeatures {
         compose = true
